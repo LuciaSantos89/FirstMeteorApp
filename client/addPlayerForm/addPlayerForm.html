@@ -1,8 +1,16 @@
 <template name="addPlayerForm">
-    {{#if currentUser}}
-        <form>
-            <input type="text" name="playerName">
-            <input type="submit" value="Add Player">
-        </form>
-    {{/if}}
+{{#if currentUser}}
+<form>
+	<div class="row">
+		<div class="input-field col s6">
+			<input type="text" id="playerName" placeholder="">
+			<label for="playerName">Add Player Name</label>
+		</div>
+		<button class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
+		<i class="material-icons right">add</i>
+		</button>
+	</div>
+	
+</form>
+{{/if}}
 </template>

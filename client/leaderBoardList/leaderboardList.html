@@ -1,13 +1,25 @@
 <template name="leaderboard">
-	<ul>
-		{{#each player}}
-		<li class="player {{selectedClass}}">{{name}}: {{score}}</li>
-		{{/each}}
-	</ul>
-	<input type="button" class="increment" value="Give 5 Points">
-	<input type="button" class="decrement" value="Take 5 Points">
-	{{#if showSelectedPlayer}}
-	    <li>Selected Player: {{showSelectedPlayer.name}}</li>
-	{{/if}}
-	<input type="button" class="remove" value="Remove Player">
+<div class="collection">
+	{{#each player}}
+	<a href="#!" class="collection-item player {{selectedClass}}">{{name}}: {{score}}</a>
+	{{/each}}
+</div>
+{{#if showSelectedPlayer}}
+<div class="row">
+	<div class="col s2">Selected Player:
+	</div>
+	<div class="col s4">
+		<input type="text" value="{{showSelectedPlayer.name}}" id="selected_player" disabled="">
+	</div>
+	<div class="col s6">
+		<button class="increment waves-effect waves-light btn-large" type="button" name="action">Give 5 Points
+		</button>
+		<button class="decrement waves-effect waves-light btn-large" type="button" name="action">Take 5 Points
+		</button>
+		<button class="remove btn-floating btn-large waves-effect waves-light" type="button" name="action">
+		<i class="material-icons right">delete</i>
+		</button>
+	</div>
+</div>
+{{/if}}
 </template>
